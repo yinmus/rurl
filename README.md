@@ -20,3 +20,5 @@ go run rurl.go -r lng link
 ```sh
 go run rurl.go -r lng link arg
 ```
+
+[Ссылка на репо с тестовыми файлами](https://github.com/yinmus/testrepo)
