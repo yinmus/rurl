@@ -75,7 +75,7 @@ func runCode(lang string, code string, args []string) error {
 
 	err = cmd.Run()
 	if err != nil {
-		return fmt.Errorf("Ошибка выполнения: %v", err)
+		return fmt.Errorf("ERR: %v", err)
 	}
 
 	return nil
@@ -83,8 +83,8 @@ func runCode(lang string, code string, args []string) error {
 
 func main() {
 	if len(os.Args) < 4 {
-		fmt.Println("Использование: go run main.go -r <язык> <URL> [аргументы]")
-		fmt.Println("Пример: go run main.go -r python https://github.com/user/repo/blob/main/script.py arg1")
+		fmt.Println("Usage: go run main.go -r <язык> <URL> [аргументы]")
+		fmt.Println("Example: go run main.go -r python https://github.com/user/repo/blob/main/script.py arg1")
 		return
 	}
 
@@ -98,10 +98,10 @@ func main() {
 		return
 	}
 
-	fmt.Println("Код загружен, выполняем...")
+	fmt.Println("Code run...")
 
 	err = runCode(lang, code, args)
 	if err != nil {
-		fmt.Println("Ошибка:", err)
+		fmt.Println("ERR:", err)
 	}
 }
